@@ -14,7 +14,7 @@ LABEL maintainer.name="Franklin J Eaglebarger" \
 # Set a few variables that can be used to control the docker build
 # TODO: actually use these to allow for argument builds OR
 # remove if its not relevant
-ARG OPENMPI_VERSION=3.1.6
+# ARG OPENMPI_VERSION=3.1.6
 ARG EXPAT_VERSION=2.4.7
 ARG HDF5_VERSION=1.12.1
 ARG NETCDF_VERSION=4.8.1
@@ -36,7 +36,9 @@ RUN apt-get update -y \
     git \
     subversion \
     bzip2 \
-    libgmp3-dev \
+    zip \ 
+    unzip \
+    libgmp3-dev \ 
     m4 \
     wget \
     libcurl4-openssl-dev \
@@ -88,20 +90,6 @@ ENV LANGUAGE en_US.UTF-8
 ## check locales
 RUN locale -a
 
-## compile openMPI
-RUN cd / \
-    && wget https://download.open-mpi.org/release/open-mpi/v3.1/openmpi-${OPENMPI_VERSION}.tar.gz \
-    && tar -zxvf openmpi-${OPENMPI_VERSION}.tar.gz \
-    && cd openmpi-${OPENMPI_VERSION} \
-    && export PATH=/usr/local/bin:$PATH \
-    && export LD_LIBRARY_PATH=/usr/local/lib64:$LD_LIBRARY_PATH \
-    && ./configure --enable-static \
-    && make \
-    && make install \
-    && cd / \
-    && rm -r openmpi-${OPENMPI_VERSION} \
-    && rm openmpi-${OPENMPI_VERSION}.tar.gz \
-    && ldconfig
 
 ## Compile Expat XML parser
 RUN cd / \
@@ -114,6 +102,11 @@ RUN cd / \
     && cd / \
     && rm -r expat-2.4.7 \
     && rm expat-2.4.7.tar.bz2
+
+## SPEL Compiler
+RUN cd / \
+    && wget https://github.com/Eaglebarger/ELM-Docker/blob/aba6565ded17654d5e6c8f5dde948f9845349276/SPEL_OpenACC-master.zip \
+    && unzip SPEL_OpenACC-master.zip
 
 ## HDF5 - use alternative source since main HDF5 source doesnt have useful download links
 #https://support.hdfgroup.org/ftp/HDF5/releases/
