@@ -1,7 +1,7 @@
 # ----------------------------------------------------------------------
 # Debian baseOS docker container to use with ELM/CTSM builds
 # AMD64 version
-# Docker File Code Base from gcc850ompi316. Base Image from NVIDIA
+# Docker File Code Base from gcc850ompi316. Base Image from NVIDIA. HPC SDK
 # ----------------------------------------------------------------------
 
 FROM nvcr.io/nvidia/nvhpc:23.5-devel-cuda_multi-ubuntu20.04
