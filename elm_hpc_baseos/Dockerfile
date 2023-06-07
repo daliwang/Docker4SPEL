@@ -7,8 +7,8 @@
 FROM nvcr.io/nvidia/nvhpc:23.5-devel-cuda_multi-ubuntu20.04
 LABEL maintainer.name="Franklin J Eaglebarger" \
       maintainer.email="fye@ornl.gov" \
-      author.name="Shawn P. Serbin" \
-      author.email="sserbin@bnl.gov" \
+      author.name="Franklin J Eaglebarger" \
+      author.email="fye@ornl.gov" \
       description="NVHPC-based image loaded with necessary dependencies for building HLM/HLM-FATES images"
 
 # Set a few variables that can be used to control the docker build
