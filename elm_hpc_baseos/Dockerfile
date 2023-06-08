@@ -14,7 +14,7 @@ LABEL maintainer.name="Franklin J Eaglebarger" \
 # Set a few variables that can be used to control the docker build
 # TODO: actually use these to allow for argument builds OR
 # remove if its not relevant
-# ARG OPENMPI_VERSION=3.1.6
+ARG OPENMPI_VERSION=3.1.6
 ARG EXPAT_VERSION=2.4.7
 ARG HDF5_VERSION=1.12.1
 ARG NETCDF_VERSION=4.8.1
