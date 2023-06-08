@@ -36,8 +36,6 @@ RUN apt-get update -y \
     git \
     subversion \
     bzip2 \
-    zip \ 
-    unzip \
     libgmp3-dev \ 
     m4 \
     wget \
@@ -105,7 +103,7 @@ RUN cd / \
 
 ## SPEL Compiler
 RUN cd / \
-    && wget https://github.com/Eaglebarger/ELM-Docker/blob/aba6565ded17654d5e6c8f5dde948f9845349276/SPEL_OpenACC-master.zip \
+    && https://github.com/Eaglebarger/ELM-Docker/blob/b315f8b39fc92ca23be253a35243eee3eb677230/SPEL_OpenACC-master.zip \
     && unzip SPEL_OpenACC-master.zip
 
 ## HDF5 - use alternative source since main HDF5 source doesnt have useful download links

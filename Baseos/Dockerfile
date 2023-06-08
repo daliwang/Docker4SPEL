@@ -1,18 +1,18 @@
 # ----------------------------------------------------------------------
 # Debian container - gcc8.5. AMD64/ARM64 version (multiarch)
 # E3SM/ELM land model docker container
-# Successful Build
-# Remove after custom docker built
+# Successful
+# Docker File Code Base from gcc850ompi316 multiarch. Base Image from NVIDIA. HPC SDK
 # ----------------------------------------------------------------------
 
-FROM fasstsimulation/baseos:gcc850ompi316_multiarch
+FROM nvcr.io/nvidia/nvhpc:23.5-devel-cuda_multi-ubuntu20.04
 LABEL maintainer.name="Eaglebarger F. " \
-      maintainer.email="" \
-      author.name="" \
-      author.email="sserbin@bnl.gov" \
+      maintainer.email="fye@ornl.gov" \
+      author.name="Franklin Eaglebarger" \
+      author.email="fye@ornl.gov" \
       description="ELM host land model" \
       version.hlm="elm_v2-for-ngee" \
-      version.baseos="gcc8.5"
+      version.baseos="NVHPC SDK"
 
 # where to get the ELM source code
 ENV REPOSITORY_URL=https://github.com/FASSt-simulation/simulation_containers
