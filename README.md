@@ -1,8 +1,35 @@
 # ELM-Docker: E3SM, ELM, SPEL, HPC Docker Project
 
-Docker Image Generation and Configuration for implementing custom compilers, GPU, and NVHPC utilization on DGX Station or Cloud Deployment.
+**Written by:** Franklin Eaglebarger  
+**Directed by:** Dr. Dali Wang  
+**Assisted by:** Fengming Yuan, Chris Layton, and Peter Schwartz  
 
-**Please refer to the Wiki for a full Description/Background Information, Getting Docker, Docker Image Configuration, Creating SPEL Application, and Acronym/Definition Glossary.**
+**Conducted at:** Oak Ridge National Laboratory (ORNL) in conjunction with Oak Ridge Institute for Science and Education (ORISE) and Pellissippi State Community College (PSCC)  
+**Summer 2023**
+
+## Introduction
+
+The ELM-Docker project focuses on Docker image generation and configuration, enabling the implementation of custom compilers, GPU utilization, and NVHPC on DGX Stations or in cloud deployments. This project aims to provide a seamless environment for running the SPEL application on both AMD-based CPU machines and DGX machines, with a particular emphasis on GPU utilization. The Docker images and containers are prebuilt and readily available through Docker Desktop and GitHub, providing easy access to all the necessary components.
+
+One of the main objectives of this project is to consolidate and organize the layers present in the SPEL ecosystem, as well as clarify and streamline the connections between SPEL, ELM, OLMT, and E3SM. By doing so, we aim to create a comprehensive resource that encompasses all the required information and tools for researchers and developers.
+
+In the broader context, the SPEL application serves as a crucial component in the larger picture. It leverages the power of GPUs on DGX machines to enhance the capabilities of the E3SM land model (ELM). SPEL builds upon previous work by Dali Wang and Yao Cindy, offering a robust method for developing ELM onto GPUs. The SPEL repository contains the necessary Fortran source files, GPU-ready ELM test modules, Python scripts, and optimized versions of source files.
+
+Furthermore, Fengming Yuan has developed a Docker application version of the ELM containers, complete with comprehensive instructions for running ELM, including the utilization of Jupyter notebooks for visualizing the ELM output. This provides an additional layer of convenience and accessibility for ELM users.
+
+ELM itself builds off the Offline Land Model Testbed (OLMT), a set of Python scripts designed to automate offline land model simulations. OLMT enables simulations at various scales, from single sites to global regions, and facilitates the creation, building, and submission of the necessary cases for a full land model BGC (Biogeochemical) simulation. It automates the generation of surface and domain files based on existing global files.
+
+By combining these components and streamlining the deployment process with Docker, the ELM-Docker project aims to empower researchers and developers in their exploration of the E3SM, ELM, SPEL, and OLMT ecosystems.
+
+## References
+
+Please find below the references related to the components and tools used in this project:
+
+- [ELM Containers](https://github.com/fmyuan/elm_containers)
+- [E3SM](https://github.com/fmyuan/E3SM)
+- [SPEL_OpenACC](https://github.com/peterdschwartz/SPEL_OpenACC)
+- [OLMT](https://github.com/FASSt-simulation/OLMT)
+- [Simulation Containers](https://github.com/FASSt-simulation/simulation_containers)
 
 ## SPEL: Software for Porting ELM using Compiler Directives
 
@@ -23,15 +50,17 @@ The NVHPC Baseos & Docker is an Ubuntu AMD64-based image that utilizes the NVIDI
    - SPEL repository & software necessary dependencies
    - SPEL Origination/Documentation: [SPEL_OpenACC](https://github.com/peterdschwartz/SPEL_OpenACC)
 
-### How To Run SPEL:
-*Also in the WIKI*
+### How To Run SPEL
+*(Also available in the Wiki)*
 
 1. Assuming Docker CLI is installed and running, pull the image:
    ```
    sudo docker pull fje1223/spel_docker_nvhpc:latest
    ```
 
-2. Run the image with the -i flag to execute commands from within the running container:
+2. Run the image with the -i flag to execute commands from
+
+ within the running container:
    ```
    sudo nvidia-docker run -t -i fje1223/spel_docker_nvhpc
    ```
@@ -64,7 +93,7 @@ The NVHPC Baseos & Docker is an Ubuntu AMD64-based image that utilizes the NVIDI
    ./elmtest.exe <x>
    ```
 
-## Processes:
+## Processes
 
 1. Docker Background & E3SM Info (ELM, SPEL)
 2. Docker Custom Image: ELM requirements - Python, expat, HDF5, netCDF
@@ -73,4 +102,8 @@ The NVHPC Baseos & Docker is an Ubuntu AMD64-based image that utilizes the NVIDI
    - [NVIDIA HPC SDK](https://developer.nvidia.com/hpc-sdk)
 4. New Image with SPEL Dependencies/Repo
 
+## Welcome
+
 Welcome to the ELM-Docker project, where we harness the power of Docker to simplify software deployment, optimize GPU utilization, and enable efficient cloud deployment. Explore the possibilities and take your E3SM, ELM, and SPEL workflows to new heights!
+
+**Please refer to the Wiki for a full Description/Background Information, Getting Docker, Docker Image Configuration, Creating SPEL Application, and Acronym/Definition Glossary.**
