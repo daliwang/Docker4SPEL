@@ -5,17 +5,22 @@ See Wiki for full description and background
 SPEL- Software for Porting ELM using compiler directives: 
     1) NVHPC Baseos & Docker is Ubuntu AMD64 based that uses NVIDIA SDK Base image to be GPU Utilized in a DGX Machine
     2) Base & Docker is Redhat ARM64 based, primarily for CPU processing
- 
- 
-Docker Layer Architecture: AMD x64_86
+
+
+Docker Layer Architecture: AMD x64_86 \
+
 1- nvcr.io/nvidia/nvhpc:23.5-devel-cuda_multi-ubuntu22.04
     DGX Machine NVIDIA GPU utilizing docker image
+
 2- fje1223/spel_base_nvhpc
     initial dependencies & config, python & pip3, expat XML parser
+
 3- yuanfornl/elm_docker_2022
     HDF5 & netCDF
+
 4- fje1223/spel_docker_nvhpc
     SPEL repository & software necessary dependencies
+    
         How To: 
             1. Run Image with -i flag to execute commands from within the running container:
                     sudo nvidia-docker run -t -i fje1223/spel_docker_nvhpc
@@ -32,3 +37,11 @@ Docker Layer Architecture: AMD x64_86
                     cp ../../*.txt . 
             7. Run your created module using x sets of 42:
                     ./elmtest.exe <x>
+
+
+
+Processes: 
+1. Docker Background & ELM D
+2. Docker Custom image: ELM requirements- python, expat, HDF5, netCDF
+3. Docker with GPU utilization for DGX
+4. New Image with SPEL Repo
