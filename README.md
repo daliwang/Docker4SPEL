@@ -1,3 +1,7 @@
+## Welcome
+
+Welcome to the ELM-Docker project, where we harness the power of Docker to simplify software deployment, optimize GPU utilization, and enable efficient cloud deployment. Explore the possibilities and take your E3SM, ELM, and SPEL workflows to new heights!
+
 # ELM-Docker: E3SM, ELM, SPEL, HPC Docker Project
 
 **Written by:** Franklin Eaglebarger  
@@ -20,6 +24,8 @@ Furthermore, Fengming Yuan has developed a Docker application version of the ELM
 ELM itself builds off the Offline Land Model Testbed (OLMT), a set of Python scripts designed to automate offline land model simulations. OLMT enables simulations at various scales, from single sites to global regions, and facilitates the creation, building, and submission of the necessary cases for a full land model BGC (Biogeochemical) simulation. It automates the generation of surface and domain files based on existing global files.
 
 By combining these components and streamlining the deployment process with Docker, the ELM-Docker project aims to empower researchers and developers in their exploration of the E3SM, ELM, SPEL, and OLMT ecosystems.
+
+**Please refer to the Wiki for a full Description/Background Information, Getting Docker, Docker Image Configuration, Creating SPEL Application, and Acronym/Definition Glossary.**
 
 ## References
 
@@ -101,9 +107,3 @@ The NVHPC Baseos & Docker is an Ubuntu AMD64-based image that utilizes the NVIDI
 3. Docker with GPU Utilization for DGX
    - [NVIDIA HPC SDK](https://developer.nvidia.com/hpc-sdk)
 4. New Image with SPEL Dependencies/Repo
-
-## Welcome
-
-Welcome to the ELM-Docker project, where we harness the power of Docker to simplify software deployment, optimize GPU utilization, and enable efficient cloud deployment. Explore the possibilities and take your E3SM, ELM, and SPEL workflows to new heights!
-
-**Please refer to the Wiki for a full Description/Background Information, Getting Docker, Docker Image Configuration, Creating SPEL Application, and Acronym/Definition Glossary.**
