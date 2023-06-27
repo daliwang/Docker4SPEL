@@ -1,8 +1,8 @@
 ## Welcome
 
-Welcome to the ELM-Docker project! We are dedicated to simplifying software deployment and optimizing GPU utilization for your E3SM, ELM, and SPEL workflows. With the power of Docker, we provide a seamless and efficient solution to enhance your research and development processes. Explore the possibilities and elevate your projects to new heights.
+Welcome to the SPEL-Docker project! We are dedicated to simplifying software deployment and optimizing GPU utilization for your E3SM, ELM, and SPEL workflows. With the power of Docker, we provide a seamless and efficient solution to enhance your research and development processes. Explore the possibilities and elevate your projects to new heights.
 
-# ELM-Docker: SPEL, ELM, E3SM, HPC Docker Project
+# SPEL-Docker: ELM, E3SM, HPC Docker Project
 
 **Written by:** Franklin Eaglebarger  
 **Directed by:** Dr. Dali Wang  
@@ -13,7 +13,7 @@ Welcome to the ELM-Docker project! We are dedicated to simplifying software depl
 
 ## Introduction
 
-The ELM-Docker project focuses on Docker image generation and configuration, enabling the implementation of custom compilers, GPU utilization, and NVHPC on DGX Stations or in cloud deployments. This project aims to provide a seamless environment for running the SPEL application on both AMD-based CPU machines and DGX machines, with a particular emphasis on GPU utilization. The Docker images and containers are prebuilt and readily available through Docker Desktop and GitHub, providing easy access to all the necessary components.
+The SPEL-Docker project focuses on Docker image generation and configuration, enabling the implementation of custom compilers, GPU utilization, and NVHPC on DGX Stations or in cloud deployments. This project aims to provide a seamless environment for running the SPEL application on both AMD-based CPU machines and DGX machines, with a particular emphasis on GPU utilization. The Docker images and containers are prebuilt and readily available through Docker Desktop and GitHub, providing easy access to all the necessary components.
 
 One of the main objectives of this project is to consolidate and organize the layers present in the SPEL ecosystem, as well as clarify and streamline the connections between SPEL, ELM, OLMT, and E3SM. By doing so, we aim to create a comprehensive resource that encompasses all the required information and tools for researchers and developers.
 
@@ -23,7 +23,7 @@ Furthermore, Fengming Yuan has developed a Docker application version of the ELM
 
 ELM itself builds off the Offline Land Model Testbed (OLMT), a set of Python scripts designed to automate offline land model simulations. OLMT enables simulations at various scales, from single sites to global regions, and facilitates the creation, building, and submission of the necessary cases for a full land model BGC (Biogeochemical) simulation. It automates the generation of surface and domain files based on existing global files.
 
-By combining these components and streamlining the deployment process with Docker, the ELM-Docker project aims to empower researchers and developers in their exploration of the E3SM, ELM, SPEL, and OLMT ecosystems.
+By combining these components and streamlining the deployment process with Docker, the SPEL-Docker project aims to empower researchers and developers in their exploration of the E3SM, ELM, SPEL, and OLMT ecosystems.
 
 **Please refer to the Wiki for a full Description/Background Information, Getting Docker, Docker Image Configuration, Creating SPEL Application, and Acronym/Definition Glossary.**
 
