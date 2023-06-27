@@ -1,6 +1,6 @@
 ## Welcome
 
-Welcome to the ELM-Docker project, where we harness the power of Docker to simplify software deployment, optimize GPU utilization, and enable efficient cloud deployment. Explore the possibilities and take your E3SM, ELM, and SPEL workflows to new heights!
+Welcome to the ELM-Docker project! We are dedicated to simplifying software deployment and optimizing GPU utilization for your E3SM, ELM, and SPEL workflows. With the power of Docker, we provide a seamless and efficient solution to enhance your research and development processes. Explore the possibilities and elevate your projects to new heights.
 
 # ELM-Docker: E3SM, ELM, SPEL, HPC Docker Project
 
