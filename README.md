@@ -45,3 +45,4 @@ Processes:
 2. Docker Custom image: ELM requirements- python, expat, HDF5, netCDF
 3. Docker with GPU utilization for DGX
 4. New Image with SPEL Repo
+# Update & Clean
