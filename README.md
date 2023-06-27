@@ -2,7 +2,7 @@
 
 Docker Image Generation and Configuration for implementing custom compilers, GPU, and NVHPC utilization on DGX Station or Cloud Deployment.
 
-**Please refer to the Wiki for a full description and background.**
+**Please refer to the Wiki for a full description, "How To", Acronym/Definition Glossary, and background information.**
 
 ## SPEL: Software for Porting ELM using Compiler Directives
 
@@ -14,7 +14,7 @@ The NVHPC Baseos & Docker is an Ubuntu AMD64-based image that utilizes the NVIDI
    - DGX Machine NVIDIA GPU utilizing Docker image
 
 2. `fje1223/spel_base_nvhpc`
-   - Initial dependencies & config, Python & pip3, expat XML parser
+   - Initial dependencies & configuration, Python/pip3, expat XML parser
 
 3. `yuanfornl/elm_docker_2022`
    - HDF5, netCDF, OpenMPI
