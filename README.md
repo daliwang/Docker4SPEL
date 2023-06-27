@@ -2,7 +2,7 @@
 
 Docker Image Generation and Configuration for implementing custom compilers, GPU, and NVHPC utilization on DGX Station or Cloud Deployment.
 
-**Please refer to the Wiki for a full description, "How To", Acronym/Definition Glossary, and background information.**
+**Please refer to the Wiki for a full Description/Background Information, Getting Docker, Docker Image Configuration, Creating SPEL Application, and Acronym/Definition Glossary.**
 
 ## SPEL: Software for Porting ELM using Compiler Directives
 
