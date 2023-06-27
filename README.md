@@ -68,9 +68,9 @@ The NVHPC Baseos & Docker is an Ubuntu AMD64-based image that utilizes the NVIDI
 
 1. Docker Background & E3SM Info (ELM, SPEL)
 2. Docker Custom Image: ELM requirements - Python, expat, HDF5, netCDF
-   - Origination Documentation on ELM: [ELM Containers Wiki](https://github.com/fmyuan/elm_containers/wiki)
+   - Origination Documentation on and running ELM: [ELM Containers Wiki](https://github.com/fmyuan/elm_containers/wiki)
 3. Docker with GPU Utilization for DGX
    - [NVIDIA HPC SDK](https://developer.nvidia.com/hpc-sdk)
-4. New Image with SPEL Repo
+4. New Image with SPEL Dependencies/Repo
 
 Welcome to the ELM-Docker project, where we harness the power of Docker to simplify software deployment, optimize GPU utilization, and enable efficient cloud deployment. Explore the possibilities and take your E3SM, ELM, and SPEL workflows to new heights!
