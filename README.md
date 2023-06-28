@@ -41,7 +41,7 @@ Please find below the references related to the components and tools used in thi
 
 The NVHPC Baseos & Docker is an Ubuntu AMD64-based image that utilizes the NVIDIA SDK Base image for GPU utilization in a DGX Machine.
 
-### Docker Layer Architecture: AMD x64_86
+### Docker Layer Architecture: AMD x86-64
 
 1. `nvcr.io/nvidia/nvhpc:23.5-devel-cuda_multi-ubuntu22.04`
    - DGX Machine NVIDIA GPU utilizing Docker image
