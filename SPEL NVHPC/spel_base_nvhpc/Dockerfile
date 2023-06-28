@@ -1,7 +1,9 @@
 # ------------------------------------------------------------------------
-# Debian baseOS docker container to use with ELM/CTSM builds
+# Ubuntu baseOS docker container to use with ELM/CTSM builds
 # AMD64 version
-# Docker File Code Base from gcc850ompi316 multiarch. Base Image from NVIDIA. HPC SDK.
+# Docker File Code Base from gcc850ompi316 multiarch:
+#   FASSt-simulation/simulation_containers 
+# Base Image from NVIDIA HPC SDK.
 # No hdf5, No netCDF, No OpenMPI
 # ------------------------------------------------------------------------
 

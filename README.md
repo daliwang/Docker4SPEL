@@ -68,15 +68,25 @@ The NVHPC Baseos & Docker is an Ubuntu AMD64-based image that utilizes the NVIDI
 
  within the running container:
    ```
-   sudo nvidia-docker run -t -i fje1223/spel_docker_nvhpc
+   sudo nvidia-docker run -t -i fje1223/spel_docker_nvhpc:latest
    ```
 
-3. Create the module test:
+3. Change Directory to scripts if not already in it:
+   ```
+   cd SPEL_OpenACC/scripts
+   ```
+
+4. Create the module test:
    ```
    python3 UnitTestforELM.py
    ```
 
-4. Change the compiler flag in the makefile:
+5. Change Directory to the Test Module that you're attempting to run:
+   ```
+   cd SPEL_OpenACC/unit-tests/<your module>
+   ```
+
+6. Change the compiler flag in the makefile:
    - From: `FC_FLAGS = $(FC_FLAGS_DEBUG) $(MODEL_FLAGS) \`
    - To: `FC_FLAGS = $(FC_FLAGS_ACC) $(MODEL_FLAGS) \`
    ```
@@ -84,17 +94,17 @@ The NVHPC Baseos & Docker is an Ubuntu AMD64-based image that utilizes the NVIDI
    make
    ```
 
-5. Change the directory to the working directory:
+6. Change the directory to the working directory:
    ```
-   cd SPEL_OpenACC/unit-tests/<the module directory created from step 3>
+   cd SPEL_OpenACC/unit-tests/<the module directory created from step 5>
    ```
 
-6. Copy the reference/input data (E3SM_constants.txt):
+7. Copy the reference/input data (E3SM_constants.txt):
    ```
    cp ../../*.txt .
    ```
 
-7. Run your created module using x sets of 42:
+8. Run your created module using x sets of 42:
    ```
    ./elmtest.exe <x>
    ```

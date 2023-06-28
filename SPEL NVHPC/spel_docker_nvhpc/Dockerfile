@@ -1,6 +1,9 @@
+#-----------------------------------------------------------------
 # Ubuntu based NVIDIA SDK NVHPC GPU Utilization
 # Use this Image for SPEL 
 # Reference Peter Schwartz Github for SPEL Documentation
+#     https://github.com/peterdschwartz/SPEL_OpenACC
+#-----------------------------------------------------------------
 
 FROM yuanfornl/elm_baseos_nvhpc:latest
 
@@ -23,7 +26,7 @@ ENV LD_LIBRARY_PATH="/usr/local/cuda/lib64:${LD_LIBRARY_PATH}"
 ENV LD_LIBRARY_PATH="/usr/local/cuda/extras/CUPTI/lib64:${LD_LIBRARY_PATH}"
 
 # Change working directory to /app/SPEL_OpenACC
-WORKDIR /app/SPEL_OpenACC
+WORKDIR /app/SPEL_OpenACC/scripts
 
 # Any commands executed from this point onwards will be relative to /app/SPEL_OpenACC
 
