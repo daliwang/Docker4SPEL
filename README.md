@@ -64,9 +64,8 @@ The NVHPC Baseos & Docker is an Ubuntu AMD64-based image that utilizes the NVIDI
    sudo docker pull fje1223/spel_docker_nvhpc:latest
    ```
 
-2. Run the image with the -i flag to execute commands from
-
- within the running container:
+2. Run the image with the -i flag to execute commands from 
+   within the running container:
    ```
    sudo nvidia-docker run -t -i fje1223/spel_docker_nvhpc:latest
    ```
