@@ -46,11 +46,11 @@ The NVHPC Baseos & Docker is an Ubuntu AMD64-based image that utilizes the NVIDI
 1. `nvcr.io/nvidia/nvhpc:23.5-devel-cuda_multi-ubuntu22.04`
    - DGX Machine NVIDIA GPU utilizing Docker image
 
-2. `fje1223/spel_base_nvhpc`
-   - Initial dependencies & configuration, Python/pip3, expat XML parser
+2. `yuanfornl/elm_baseos_nvhpc:latest`
+   - Initial dependencies, locale configuration, Python/pip3, expat XML parser
 
-3. `yuanfornl/elm_docker_2022`
-   - HDF5, netCDF, OpenMPI
+3. `yuanfornl/elm_docker2023:nvhpc`
+   - HDF5, netCDF, netCDF-Fortran, OpenMPI
 
 4. `fje1223/spel_docker_nvhpc`
    - SPEL repository & software necessary dependencies
