@@ -1,62 +1,29 @@
 ## Welcome
 
-Welcome to the SPEL-Docker project! We are dedicated to simplifying software deployment and optimizing GPU utilization for your E3SM, ELM, and SPEL workflows. With the power of Docker, we provide a seamless and efficient solution to enhance your research and development processes. Explore the possibilities and elevate your projects to new heights.
+It is a clone from https://github.com/Eaglebarger/SPEL-Docker with modifications and test procedures on Nvidia GPUs. 
 
-# SPEL-Docker: ELM, E3SM, HPC Docker Project
-
-**Written by:** Franklin Eaglebarger  
-**Directed by:** Dr. Dali Wang  
-**Assisted by:** Fengming Yuan, Chris Layton, and Peter Schwartz  
-
-**Conducted at:** Oak Ridge National Laboratory (ORNL) in conjunction with Oak Ridge Institute for Science and Education (ORISE) and Pellissippi State Community College (PSCC)  
-**Summer 2023**
+Welcome to the SPEL-Docker project, which is designed to make E3SM land model (ELM) unit testing with SPEL available to users without heinous ELM/GPU configuration. Technically, with the power of Docker, we provide a seamless and efficient solution to simplifying software deployment and optimizing GPU utilization for ELM simulation and unit testing with SPEL. For demonstration purposes, the current SPEL package only contains one unit testing module (LakeTemperature) targeting Nvidia GPUs using NVHPC/OpenACC.
 
 ## Introduction
 
-The SPEL-Docker project focuses on Docker image generation and configuration, enabling the implementation of custom compilers, GPU utilization, and NVHPC on DGX Stations or in cloud deployments. This project aims to provide a seamless environment for running the SPEL application on both AMD-based CPU machines and DGX machines, with a particular emphasis on GPU utilization. The Docker images and containers are prebuilt and readily available through Docker Desktop and GitHub, providing easy access to all the necessary components.
-
-One of the main objectives of this project is to consolidate and organize the layers present in the SPEL ecosystem, as well as clarify and streamline the connections between SPEL, ELM, OLMT, and E3SM. By doing so, we aim to create a comprehensive resource that encompasses all the required information and tools for researchers and developers.
-
-In the broader context, the SPEL application serves as a crucial component in the larger picture. It leverages the power of GPUs on DGX machines to enhance the capabilities of the E3SM land model (ELM). SPEL builds upon previous work by Dali Wang and Yao Cindy, offering a robust method for developing ELM onto GPUs. The SPEL repository contains the necessary Fortran source files, GPU-ready ELM test modules, Python scripts, and optimized versions of source files.
-
-Furthermore, Fengming Yuan has developed a Docker application version of the ELM containers, complete with comprehensive instructions for running ELM, including the utilization of Jupyter notebooks for visualizing the ELM output. This provides an additional layer of convenience and accessibility for ELM users.
-
-ELM itself builds off the Offline Land Model Testbed (OLMT), a set of Python scripts designed to automate offline land model simulations. OLMT enables simulations at various scales, from single sites to global regions, and facilitates the creation, building, and submission of the necessary cases for a full land model BGC (Biogeochemical) simulation. It automates the generation of surface and domain files based on existing global files.
-
-By combining these components and streamlining the deployment process with Docker, the SPEL-Docker project aims to empower researchers and developers in their exploration of the E3SM, ELM, SPEL, and OLMT ecosystems.
-
-**Please refer to the Wiki for a full Description/Background Information, Getting Docker, Docker Image Configuration, Creating SPEL Application, and Acronym/Definition Glossary.**
-
-## References
-
-Please find below the references related to the components and tools used in this project:
-
-- [ELM Containers](https://github.com/fmyuan/elm_containers)
-- [E3SM](https://github.com/fmyuan/E3SM)
-- [SPEL_OpenACC](https://github.com/peterdschwartz/SPEL_OpenACC)
-- [OLMT](https://github.com/FASSt-simulation/OLMT)
-- [Simulation Containers](https://github.com/FASSt-simulation/simulation_containers)
-
 ## SPEL: Software for Porting ELM using Compiler Directives
+SPEL is an innovative toolkit developed to automate port and optimize ELM code on GPU (currently with OpenACC) within a Function Unit Test Framework. SPEL Origination/Documentation: [SPEL_OpenACC](https://github.com/peterdschwartz/SPEL_OpenACC)
 
-The NVHPC Baseos & Docker is an Ubuntu AMD64-based image that utilizes the NVIDIA SDK Base image for GPU utilization in a DGX Machine.
-
-### Docker Layer Architecture: AMD x86-64
+### Docker Layer Architecture: x86-64
 
 1. `nvcr.io/nvidia/nvhpc:23.5-devel-cuda_multi-ubuntu22.04`
-   - DGX Machine NVIDIA GPU utilizing Docker image
+   - Base Nvidia-docker image that supports Nvidia GPUs. The NVHPC Baseos & Docker is an Ubuntu x86-64-based image that contains the NVIDIA SDK for Nvidia GPU.
 
 2. `yuanfornl/elm_baseos_nvhpc:23.5`
-   - Initial dependencies, locale configuration, Python/pip3, expat XML parser
+   - Prepare the previous Nvidia-docker image for ELM (Added Python/pip3, XML parser, etc)
 
 3. `yuanfornl/elm_baseos_nvhpc:latest`
-   - HDF5, netCDF, netCDF-Fortran, OpenMPI
+   - Added HDF5, netCDF, netCDF-Fortran, OpenMPI
 
 4. `fje1223/spel_docker_nvhpc`
-   - SPEL repository & software necessary dependencies
-   - SPEL Origination/Documentation: [SPEL_OpenACC](https://github.com/peterdschwartz/SPEL_OpenACC)
+   - Added SPEL repository & software necessary dependencies
 
-### How To Run SPEL
+### How To Run SPEL in the customized docker image
 *(Also available in the Wiki)*
 
 1. Assuming Docker CLI is installed and running, pull the image:
@@ -66,53 +33,58 @@ The NVHPC Baseos & Docker is an Ubuntu AMD64-based image that utilizes the NVIDI
 
 2. Run the image with the -i flag to execute commands from 
    within the running container:
+
+   (CPU-version)
    ```
    sudo nvidia-docker run -t -i fje1223/spel_docker_nvhpc:latest
    ```
 
-3. Change Directory to scripts if not already in it:
+   (GPU-version)  (e.g., using the first GPU(0) in the system )
+   ```
+   sudo nvidia-docker run --gpus 0 -t -i fje1223/spel_docker_nvhpc:latest
+   ```
+
+3. Change the Directory to scripts if not already in it:
    ```
    cd SPEL_OpenACC/scripts
    ```
 
-4. Create the module test:
+4. Create the module test: (e.g., A LakeTemperature unit test case will be created)
    ```
    python3 UnitTestforELM.py
    ```
 
 5. Change Directory to the Test Module that you're attempting to run:
    ```
-   cd SPEL_OpenACC/unit-tests/<your module>
+   cd SPEL_OpenACC/unit-tests/<your module> (e.g., LakeTemperature)
    ```
 
-6. Change the compiler flag in the makefile:
+6. Create the unit test application
+  (CPU version)
+   ```
+   make clean; make
+   ```
+  (GPU version) 
+   Change the compiler flag in the makefile:
    - From: `FC_FLAGS = $(FC_FLAGS_DEBUG) $(MODEL_FLAGS) \`
    - To: `FC_FLAGS = $(FC_FLAGS_ACC) $(MODEL_FLAGS) \`
+   Then
    ```
-   make clean
-   make
-   ```
-
-6. Change the directory to the working directory:
-   ```
-   cd SPEL_OpenACC/unit-tests/<the module directory created from step 5>
+   make clean; make
    ```
 
-7. Copy the reference/input data (E3SM_constants.txt):
+7. Stay in the working directory:
+   ```
+   cd SPEL_OpenACC/unit-tests/<the module directory created from step 5>  (e.g., LakeTemparature)
+   ```
+
+8. Copy the reference/input data (E3SM_constants, object_files, output_vars) for unit testing:
    ```
    cp ../../*.txt .
    ```
 
-8. Run your created module using x sets of 42:
+9. Run your created module over a group of land cells (using x sets of 42 AmeriFlux sites):
    ```
-   ./elmtest.exe <x>
+   ./elmtest.exe <x>  (e.g., 2 means 84 land cells (2 groups of 42 AmeriFlux sites))
    ```
 
-## Processes
-
-1. Docker Background & E3SM Info (ELM, SPEL)
-2. Docker Custom Image: ELM requirements - Python, expat, HDF5, netCDF
-   - Origination Documentation on and running ELM: [ELM Containers Wiki](https://github.com/fmyuan/elm_containers/wiki)
-3. Docker with GPU Utilization for DGX
-   - [NVIDIA HPC SDK](https://developer.nvidia.com/hpc-sdk)
-4. New Image with SPEL Dependencies/Repo
