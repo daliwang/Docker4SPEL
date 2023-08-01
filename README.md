@@ -2,7 +2,7 @@
 
 It is a clone from https://github.com/Eaglebarger/SPEL-Docker with modifications and test procedures on Nvidia GPUs. 
 
-Welcome to the SPEL-Docker project, which is designed to make E3SM land model (ELM) unit testing with SPEL available to users without heinous ELM/GPU configuration. Technically, with the power of Docker, we provide a seamless and efficient solution to simplifying software deployment and optimizing GPU utilization for ELM simulation and unit testing with SPEL. For demonstration purposes, the current SPEL package only contains one unit testing module (LakeTemperature) targeting Nvidia GPUs using NVHPC/OpenACC.
+Welcome to the SPEL-Docker project, which is designed to make E3SM land model (ELM) unit testing with SPEL available to users without strenuous ELM/GPU configuration. Technically, with the power of Docker, we provide a seamless and efficient solution to simplifying software deployment and optimizing GPU utilization for ELM simulation and unit testing with SPEL. For demonstration purposes, the current SPEL package only contains one unit testing module (LakeTemperature) targeting Nvidia GPUs using NVHPC/OpenACC.
 
 ## Introduction
 
