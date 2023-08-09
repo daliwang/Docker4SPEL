@@ -93,7 +93,10 @@ SPEL is an innovative toolkit developed to automate port and optimize ELM code o
    
 10. (Extra) Save LakeTemperatuter result for verification.
     ```
-    cp ../../LakeTemperature_main_verification.F90 main.F90; make
+    add "call update_vars_LakeTemperature(gpuflag, "Test")" into the main.F90 (line 232)
+    see ../../LakeTemperature_main_verification.F90 main.F90
+    ```
+    make
     ./elmtest.exe 1
     ```
     Depending on the flag you choose, it will produce
@@ -103,7 +106,7 @@ SPEL is an innovative toolkit developed to automate port and optimize ELM code o
     python ../../scripts/errorAnalysis.py -c cpu_LakeTemperatureRef.txt
           -g <cpu/gpu>_LakeTemperature.txt
     ```
-    
+   
     
       
 
