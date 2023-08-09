@@ -39,12 +39,12 @@ SPEL is an innovative toolkit developed to automate port and optimize ELM code o
 
    (CPU-version)
    ```
-   sudo nvidia-docker run -t -i wangdl1108/docker4spel_demo:latest
+   sudo nvidia-docker run -t -i wangdl1108/docker4spel_demo:ref
    ```
 
    (GPU-version)  (e.g., using the first GPU(0) in the system )
    ```
-   sudo nvidia-docker run --gpus 0 -t -i wangdl1108/docker4spel_demo:latest
+   sudo nvidia-docker run --gpus 0 -t -i wangdl1108/docker4spel_demo:ref
    ```
 
 3. Change the Directory to scripts if not already in it:
