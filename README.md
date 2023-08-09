@@ -90,4 +90,20 @@ SPEL is an innovative toolkit developed to automate port and optimize ELM code o
    ```
    ./elmtest.exe <x>  (e.g., 2 means 84 land cells (2 groups of 42 AmeriFlux sites))
    ```
+   
+10. (Extra) Save LakeTemperatuter result for verification.
+    ```
+    cp ../../LakeTemperature_main_verification.F90 main.F90; make
+    ./elmtest.exe 1
+    ```
+    Depending on the flag you choose, it will produce
+      cpu_LakeTemperatureTest.txt or   cpu_LakeTemperatureTest.txt
+
+    ```
+    python ../../scripts/errorAnalysis.py -c cpu_LakeTemperatureRef.txt
+          -g <cpu/gpu>_LakeTemperature.txt
+    ```
+    
+    
+      
 
