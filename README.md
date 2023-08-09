@@ -22,13 +22,16 @@ SPEL is an innovative toolkit developed to automate port and optimize ELM code o
 
 4. `fje1223/spel_docker_nvhpc`
    - Added SPEL repository & software necessary dependencies
+     
+5. `wangdl1108/docker4spel_demo`
+   - Added Reference for code validation
 
 ### How To Run SPEL in the customized docker image
 *(Also available in the Wiki)*
 
 1. Assuming Docker CLI is installed and running, pull the image:
    ```
-   sudo docker pull fje1223/spel_docker_nvhpc:latest
+   sudo docker pull wangdl1108/docker4spel_demo:latest
    ```
 
 2. Run the image with the -i flag to execute commands from 
@@ -36,12 +39,12 @@ SPEL is an innovative toolkit developed to automate port and optimize ELM code o
 
    (CPU-version)
    ```
-   sudo nvidia-docker run -t -i fje1223/spel_docker_nvhpc:latest
+   sudo nvidia-docker run -t -i wangdl1108/docker4spel_demo:latest
    ```
 
    (GPU-version)  (e.g., using the first GPU(0) in the system )
    ```
-   sudo nvidia-docker run --gpus 0 -t -i fje1223/spel_docker_nvhpc:latest
+   sudo nvidia-docker run --gpus 0 -t -i wangdl1108/docker4spel_demo:latest
    ```
 
 3. Change the Directory to scripts if not already in it:
