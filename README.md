@@ -102,7 +102,7 @@ SPEL is an innovative toolkit developed to automate port and optimize ELM code o
     ```
     Depending on the flag you choose, it will produce
       cpu_LakeTemperatureTest.txt or   cpu_LakeTemperatureTest.txt
-
+    Then errorAnalysis.py can be used to reveal the differences (Ref, CPU, GPU)
     ```
     python ../../scripts/errorAnalysis.py -c cpu_LakeTemperatureRef.txt
           -g <cpu/gpu>_LakeTemperature.txt
