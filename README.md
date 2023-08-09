@@ -31,7 +31,7 @@ SPEL is an innovative toolkit developed to automate port and optimize ELM code o
 
 1. Assuming Docker CLI is installed and running, pull the image:
    ```
-   sudo docker pull wangdl1108/docker4spel_demo:latest
+   sudo docker pull wangdl1108/docker4spel_demo:ref
    ```
 
 2. Run the image with the -i flag to execute commands from 
